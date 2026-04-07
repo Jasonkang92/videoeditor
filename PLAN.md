@@ -21,7 +21,7 @@ A modern, real-time collaborative video editing platform that enables teams to c
 
 #### Deliverables
 - [x] Project structure and documentation
-- [ ] Backend API with FastAPI
+- [ ] Backend API with FastAPI (Python)
   - [ ] User authentication (register, login, logout)
   - [ ] JWT token management
   - [ ] User CRUD operations
@@ -136,7 +136,7 @@ A modern, real-time collaborative video editing platform that enables teams to c
 
 ---
 
-### Phase 5: Frontend Editor
+### Phase 5: Frontend Editor (React.js)
 **Timeline**: Q1 2027
 
 #### Objectives
@@ -288,8 +288,8 @@ A modern, real-time collaborative video editing platform that enables teams to c
 ## Resource Requirements
 
 ### Development Team
-- 1 Backend Engineer
-- 1 Frontend Engineer
+- 1 Backend Engineer (FastAPI/Python)
+- 1 Frontend Engineer (React.js/TypeScript)
 - 1 DevOps Engineer
 - 1 Product Manager
 
@@ -305,6 +305,25 @@ A modern, real-time collaborative video editing platform that enables teams to c
 - Notion (documentation)
 - Sentry (error tracking)
 - Datadog (monitoring)
+
+---
+
+## Technology Stack Summary
+
+### Backend
+- **Framework**: FastAPI (Python)
+- **Database**: PostgreSQL
+- **Cache**: Redis
+- **Authentication**: JWT
+- **File Storage**: GCS/S3
+
+### Frontend
+- **Framework**: React.js
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **State Management**: Zustand
+- **Styling**: Tailwind CSS
+- **HTTP Client**: Axios
 
 ---
 

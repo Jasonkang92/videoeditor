@@ -15,8 +15,9 @@ VideoEditor is a real-time collaborative video editing platform that enables mul
 - **API Documentation**: OpenAPI/Swagger
 
 ### Frontend
-- **Framework**: React / Next.js
-- **State Management**: Redux Toolkit / Zustand
+- **Framework**: React.js with TypeScript
+- **Build Tool**: Vite
+- **State Management**: Zustand
 - **Styling**: Tailwind CSS
 - **Video Processing**: Web Technologies
 
@@ -40,17 +41,31 @@ VideoEditor is a real-time collaborative video editing platform that enables mul
 videoeditor/
 ├── backend/              # Backend API (FastAPI)
 │   ├── app/             # Main application code
+│   │   ├── api/         # API endpoints
+│   │   ├── core/        # Core configuration
+│   │   ├── models/      # Database models
+│   │   ├── schemas/     # Pydantic schemas
+│   │   └── services/    # Business logic
 │   ├── tests/           # Backend tests
-│   └── requirements.txt # Python dependencies
-├── frontend/            # Frontend application
-│   ├── src/            # Source code
-│   ├── public/         # Static assets
-│   └── package.json   # Node.js dependencies
-├── docs/               # Documentation
-├── SECURITY.md         # Security policy
-├── DESIGN.md           # Architecture design
-├── PLAN.md             # Project roadmap
-└── README.md           # This file
+│   ├── requirements.txt # Python dependencies
+│   └── main.py          # Application entry point
+├── frontend/            # Frontend application (React.js)
+│   ├── src/             # Source code
+│   │   ├── components/  # React components
+│   │   ├── pages/      # Page components
+│   │   ├── hooks/      # Custom React hooks
+│   │   ├── services/   # API service layer
+│   │   ├── stores/      # State management (Zustand)
+│   │   ├── types/      # TypeScript definitions
+│   │   └── utils/      # Utility functions
+│   ├── public/          # Static assets
+│   ├── package.json     # Node.js dependencies
+│   └── vite.config.ts  # Vite configuration
+├── docs/                # Documentation
+├── SECURITY.md          # Security policy
+├── DESIGN.md            # Architecture design
+├── PLAN.md              # Project roadmap
+└── README.md            # This file
 ```
 
 ## Getting Started
@@ -62,7 +77,7 @@ videoeditor/
 - PostgreSQL 14+
 - Docker (optional)
 
-### Backend Setup
+### Backend Setup (FastAPI)
 
 ```bash
 # Navigate to backend directory
@@ -80,10 +95,10 @@ cp .env.example .env
 # Edit .env with your configuration
 
 # Run the development server
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 ```
 
-### Frontend Setup
+### Frontend Setup (React.js)
 
 ```bash
 # Navigate to frontend directory

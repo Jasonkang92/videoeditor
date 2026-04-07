@@ -9,13 +9,14 @@ VideoEditor is a collaborative video editing platform with a microservices-inspi
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                         Frontend                              │
-│                   (React/Next.js Application)                 │
+│                  (React.js + TypeScript)                      │
+│                   Built with Vite                             │
 └─────────────────────────────┬───────────────────────────────┘
                               │ HTTPS/REST/WebSocket
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                         Backend                               │
-│                    (FastAPI Application)                      │
+│                    (FastAPI + Python)                         │
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
 │  │   Auth API  │  │  Video API  │  │  Project API        │  │
 │  │  /auth/*    │  │ /videos/*   │  │  /projects/*        │  │
@@ -36,11 +37,11 @@ VideoEditor is a collaborative video editing platform with a microservices-inspi
 
 ## System Components
 
-### Frontend (React/Next.js)
+### Frontend (React.js + TypeScript + Vite)
 
 **Responsibilities:**
 - User interface rendering
-- Client-side state management
+- Client-side state management with Zustand
 - API communication
 - Real-time collaboration UI
 
@@ -52,15 +53,18 @@ frontend/
 │   │   ├── common/     # Buttons, inputs, modals
 │   │   ├── editor/     # Video editor components
 │   │   └── layout/     # Layout components
-│   ├── pages/          # Route pages
-│   ├── hooks/          # Custom React hooks
-│   ├── services/       # API service layer
-│   ├── store/          # State management
-│   ├── utils/          # Utility functions
-│   └── types/          # TypeScript definitions
+│   ├── pages/           # Route pages
+│   ├── hooks/           # Custom React hooks
+│   ├── services/        # API service layer
+│   ├── stores/          # Zustand state management
+│   ├── types/           # TypeScript definitions
+│   └── utils/           # Utility functions
+├── public/              # Static assets
+├── package.json         # Dependencies
+└── vite.config.ts       # Vite configuration
 ```
 
-### Backend (FastAPI)
+### Backend (FastAPI + Python)
 
 **Responsibilities:**
 - RESTful API endpoints
@@ -91,6 +95,9 @@ backend/
 │   ├── schemas/              # Pydantic schemas
 │   ├── services/             # Business logic layer
 │   └── main.py               # Application entry point
+├── tests/                    # Tests
+├── requirements.txt          # Python dependencies
+└── .env.example              # Environment template
 ```
 
 ## Data Models
@@ -203,9 +210,9 @@ DELETE /api/v1/projects/{id}/collaborators/{user_id}  # Remove collaborator
 ```
 GET    /api/v1/videos              # List videos
 POST   /api/v1/videos/upload        # Upload video
-GET    /api/v1/videos/{id}         # Get video details
-PUT    /api/v1/videos/{id}         # Update video metadata
-DELETE /api/v1/videos/{id}         # Delete video
+GET    /api/v1/videos/{id}          # Get video details
+PUT    /api/v1/videos/{id}          # Update video metadata
+DELETE /api/v1/videos/{id}          # Delete video
 GET    /api/v1/videos/{id}/thumbnail  # Get video thumbnail
 ```
 
@@ -219,7 +226,7 @@ GET    /api/v1/export/{job_id}/download  # Download exported file
 ## Real-time Collaboration
 
 ### WebSocket Events
-```javascript
+```typescript
 // Client → Server
 { type: "join_project", projectId: "uuid" }
 { type: "leave_project", projectId: "uuid" }
@@ -270,11 +277,21 @@ GET    /api/v1/export/{job_id}/download  # Download exported file
 
 ## Technology Decisions
 
-### Why FastAPI?
+### Why FastAPI (Python)?
 - Async-first for high concurrency
 - Automatic OpenAPI documentation
 - Pydantic for data validation
 - Type hints for code quality
+- Native WebSocket support
+- Fast performance
+
+### Why React.js + TypeScript?
+- Component-based architecture
+- Strong typing with TypeScript
+- Large ecosystem and community
+- Excellent developer experience
+- Hot Module Replacement (HMR) with Vite
+- Built-in testing utilities
 
 ### Why PostgreSQL?
 - JSON support for flexible metadata
