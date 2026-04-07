@@ -1,0 +1,407 @@
+# =============================================================================
+# VideoEditor - .gitignore
+# Comprehensive git ignore file for Python/FastAPI backend and React.js frontend
+# =============================================================================
+
+# =============================================================================
+# Environment & Secrets
+# =============================================================================
+.env
+.env.local
+.env.*.local
+.env*.txt
+*.env
+
+# Never commit credentials
+secrets/
+credentials/
+private_keys/
+*.pem
+*.key
+*.pfx
+*.p12
+
+# API Keys storage
+config/secrets.json
+config/credentials.json
+.aws/credentials
+.aws/config
+.gcp/credentials
+google-credentials.json
+
+# =============================================================================
+# Python / Backend
+# =============================================================================
+
+# Byte-compiled / optimized Python files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Pyrogram
+session*.json
+
+# =============================================================================
+# Node.js / Frontend
+# =============================================================================
+
+# Dependencies
+node_modules/
+.jspm_packages/
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+.nuxt/
+.cache/
+
+# Production
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Bower components
+bower_components/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional webpack cache
+.webpack/
+
+# Optional eslint config
+.eslintrc.js
+.eslintrc.json
+.eslintrc.yaml
+
+# Optional TypeScript cache
+*.tsbuildinfo
+
+# Optional React create app
+react-app.d.ts
+react-app-env.d.ts
+
+# Optional PostCSS config
+postcss.config.js
+
+# Optional npm debug log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional Vuepress dev server
+.vuepress/dist
+
+# Optional carbon ads
+carbonads.txt
+
+# Optional yarn integrity file
+.yarn-integrity
+
+# Optional npmrc
+.npmrc
+
+# Optional config for Create React App
+.react-apps.*
+
+# Svelte
+.DS_Store
+build/
+.cache/
+
+# Vite
+.vite/
+
+# =============================================================================
+# IDEs & Editors
+# =============================================================================
+
+# JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln.docstates
+*.swp
+.*.swo
+*~
+
+# Eclipse
+.project
+.classpath
+.settings/
+.externalToolBuilders/
+*.pydevproject
+
+# Sublime Text
+*.tmproj
+*.tm2
+*.STTheme-sublime-settings
+
+# Atom
+.atom/
+.atom-build.json
+.atom-build.lock
+
+# Emacs
+*~
+\#*\#
+.\#*
+\.emacs.desktop
+.emacs.desktop.lock
+*.elc
+
+# VS Code
+.vscode/
+settings.json
+launch.json
+tasks.json
+
+# =============================================================================
+# Operating Systems
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+Icon?
+ehthumbs.db
+Desktop.ini
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# Logs & Temporary Files
+# =============================================================================
+
+# Log files
+*.log
+logs/
+*.trace
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+
+# Temp directories
+temp/
+tmp/
+tmp-*/
+
+# =============================================================================
+# Testing
+# =============================================================================
+
+.venv-test/
+.pytest_cache/
+.playwright/
+
+# Cucumber
+reports/
+rerun.txt
+pickle*.html
+
+# =============================================================================
+# Docker
+# =============================================================================
+
+.dockerignore
+
+# =============================================================================
+# Documentation
+# =============================================================================
+
+site/
+*.md.backup
+*.tmp
+
+# =============================================================================
+# Misc
+# =============================================================================
+
+*.bak
+*.old
+*.orig
+*.py.bak
+
+# Database
+*.sqlite
+*.sqlite3
+
+# Video/Audio cache
+*.tmp.mp4
+*.tmp.ogg
+*.tmp.webm
+thumbnail_cache/
+media_cache/
+
+# =============================================================================
+# FastAPI specific
+# =============================================================================
+
+app/__pycache__/
+app/*/__pycache__/
+*.sqlite
+alembic.ini
+alembic/
+versions/
+migrations/
